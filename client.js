@@ -35,7 +35,4 @@ const connect = function () {
 };
 
 
-module.exports = {
-  net, 
-  connect, 
-};
+module.exports = {connect};
