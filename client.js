@@ -1,13 +1,12 @@
-
 const net = require("net");
+const { IP, PORT } = require("./constants");
+
 const connect = function () {
   const conn = net.createConnection({
-    host: "165.227.47.243",// IP address here,
-    port: 50541// PORT number here,
+    host: IP,
+    port: PORT
   });
 
-  // zoom IP address: "165.227.47.243"
-  // local IP address: "10.0.2.15"
   conn.setEncoding("utf8");
 
   conn.on("connect", (data) => {
@@ -27,9 +26,9 @@ const connect = function () {
     console.log(`Server closed.`)
   });
 
-  conn.on("error", (data) => {
-    console.log(`Error`)
-  });
+  // conn.on("error", (data) => {
+  //   console.log(`Error`)
+  // });
 
   return conn;
 };
